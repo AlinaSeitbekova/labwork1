@@ -12,6 +12,7 @@ namespace prostchisla
         {
             F1();
             F2();
+
         }
 
         private static void F2()
