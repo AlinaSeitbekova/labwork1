@@ -36,7 +36,9 @@ namespace Example1
     {
         static void Main(string[] args)
         {
+            //F1();
             F3();
+
             F4();
         }
 
@@ -62,7 +64,7 @@ namespace Example1
             Point p = new Point();
             p.SetInfo();
             FileStream fs = new FileStream("point.dat", FileMode.Create, FileAccess.Write);
-            BinaryFormatter bf = new BinaryFormatter();
+            BinaryFormatter bf = new BinaryFormatter();//bez tipa kak v xml
             bf.Serialize(fs, p);
 
             fs.Close();
@@ -74,7 +76,7 @@ namespace Example1
         {
             FileStream fs = new FileStream("point.xml", FileMode.Open, FileAccess.Read);
             XmlSerializer xs = new XmlSerializer(typeof(Point));
-            Point p2 = xs.Deserialize(fs) as Point;
+            Point p2 = xs.Deserialize(fs) as Point;// то есть  верни фс как поинт
             fs.Close();
             Console.WriteLine(p2.info.owner + " " + p2.info.version);
         }
