@@ -19,7 +19,7 @@ namespace prostchisla
         {
             FileStream fs = new FileStream("input.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
             StreamReader sr = new StreamReader(fs);
-
+            //hjkkjkl
             string line = sr.ReadLine();
             Console.WriteLine(line);
 
