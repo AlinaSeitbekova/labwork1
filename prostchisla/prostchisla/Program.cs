@@ -11,7 +11,7 @@ namespace prostchisla
         static void Main(string[] args)
         {
             F1();
-            F2();
+            F2()2;
 
         }
         //vvela komment
