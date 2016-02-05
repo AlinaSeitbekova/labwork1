@@ -13,6 +13,7 @@ namespace Example3.Models
         public List<Point> body = new List<Point>();//массив точек 
         public ConsoleColor color;
         public char sign;
+        public int score;
         public Drawer()
         {
             color = ConsoleColor.Blue;
@@ -23,6 +24,7 @@ namespace Example3.Models
             Console.ForegroundColor = color;
             foreach (Point p in body)// для каждой точки из массива выполнить след операции
             {
+        
                 Console.SetCursorPosition(p.x, p.y);
                 Console.Write(sign);
             }
