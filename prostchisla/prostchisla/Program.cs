@@ -14,7 +14,7 @@ namespace prostchisla
             F2();
 
         }
-
+        //vvela komment
         private static void F2()
         {
             FileStream fs = new FileStream("input.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
