@@ -13,7 +13,7 @@ namespace Example3.Models
         public List<Point> body = new List<Point>();//массив точек 
         public ConsoleColor color;
         public char sign;
-        public int score;
+        public int score=0;
         public Drawer()
         {
             color = ConsoleColor.Blue;

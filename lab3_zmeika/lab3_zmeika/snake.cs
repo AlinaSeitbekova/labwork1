@@ -35,47 +35,76 @@ namespace Example3.Models
                 Game.snake.body.Add(new Point
                 {
                     x = Game.food.body[0].x,
-                    y = Game.food.body[0].y       });
+                    y = Game.food.body[0].y
+                });
 
+                //ЗАДАНИЕ 3!
+                // если змейка съела  4 еды,то новый уровень
                 if (score == 4)
                 {
                     Game.snake.body.Clear();// уменьшаем змейку так как прошли новый уровень
                     Game.LoadlLevel(2);// открываем  новую карту
-                    Game.snake.body.Add(new Point
+
+                    //Game.snake.body.Add(new Point
+
+
+                    Game.snake.body[0].x = new Random().Next(0, 47);
+                    Game.snake.body[0].y = new Random().Next(0, 47);
+                    // создаем безопасное место для змейки во втором уровне
+                    for (int i = 0; i < Game.wall.body.Count; ++i)
                     {
-                       Game.food.body[0].x = new Random().Next(0, 47);// диапозон чисел из которых можно выбрать координату для новой еды
-                       Game.food.body[0].y = new Random().Next(0, 47);
-                    });
+
+                        if (Game.snake.body[0].x == Game.wall.body[i].x &&
+               Game.snake.body[0].y == Game.wall.body[i].y)
+                        { }
+                        else
+                        {
+                            Game.snake.body[0].x = new Random().Next(0, 47);
+                            Game.snake.body[0].y = new Random().Next(0, 47); 
+                        }
+                    }
+                    //создаем безоп место для еды на новом уровне
+                    Game.food.body[0].x = new Random().Next(0, 47);// диапозон чисел из которых можно выбрать координату для новой еды
+                    Game.food.body[0].y = new Random().Next(0, 47);
+
+
+
+
                 }
-     
-                
-     // задание 2.создаем еду на новом месте
+
+
+
+
+
+
+
+                // ЗАДАНИЕ 2!.создаем еду на новом месте
 
                 Game.food.body[0].x = new Random().Next(0, 47);// диапозон чисел из которых можно выбрать координату для новой еды
                 Game.food.body[0].y = new Random().Next(0, 47);
-    // проверяем не попала ли новая еда на стену и змеейку
+                // проверяем не попала ли новая еда на стену и змеейку
                 for (int k = 0; k < Game.snake.body.Count; ++k)
-                for (int i = 0; i < Game.wall.body.Count; ++i)
-                {
-                    if ((Game.food.body[0].x == Game.wall.body[i].x &&
-           Game.food.body[0].y == Game.wall.body[i].y) || Game.food.body[0].x == Game.snake.body[0].x && Game.food.body[k].y == Game.snake.body[k].y)
+                    for (int i = 0; i < Game.wall.body.Count; ++i)
+                    {
+                        if ((Game.food.body[0].x == Game.wall.body[i].x &&
+               Game.food.body[0].y == Game.wall.body[i].y) || Game.food.body[0].x == Game.snake.body[0].x && Game.food.body[k].y == Game.snake.body[k].y)
 
-                        Game.food.body[0].x = new Random().Next(0, 47);// диапозон чисел из которых можно выбрать координату для новой еды
-                    Game.food.body[0].y = new Random().Next(0, 47);
-                }
+                            Game.food.body[0].x = new Random().Next(0, 47);// диапозон чисел из которых можно выбрать координату для новой еды
+                        Game.food.body[0].y = new Random().Next(0, 47);
+                    }
             }
 
-//
+            //
 
-// проверка-змея попала ли на стену
+            // проверка-змея попала ли на стену
 
             for (int i = 0; i < Game.wall.body.Count; ++i)
             {
-//задание 1. проверка границ поля
-// нужно чтобы змея не выходила за границы окна консоли размером 48*48 ,поэтому рассмотрела 4 случая (для каждой стороны квадрата окна консоли)
+                //ЗАДАНИЕ1!. проверка границ поля
+                // нужно чтобы змея не выходила за границы окна консоли размером 48*48 ,поэтому рассмотрела 4 случая (для каждой стороны квадрата окна консоли)
 
                 if (Game.snake.body[0].x == Game.wall.body[i].x &&
-       Game.snake.body[0].y == Game.wall.body[i].y || Game.snake.body[0].y < Console.WindowHeight - 47 || Game.snake.body[0].y > Console.WindowHeight - 1 || Game.snake.body[0].x > Console.WindowHeight - 1 || Game.snake.body[0].x < Console.WindowHeight -47)
+       Game.snake.body[0].y == Game.wall.body[i].y || Game.snake.body[0].y < Console.WindowHeight - 47 || Game.snake.body[0].y > Console.WindowHeight - 1 || Game.snake.body[0].x > Console.WindowHeight - 1 || Game.snake.body[0].x < Console.WindowHeight - 47)
                 {
                     Console.Clear();
                     Console.SetCursorPosition(20, 10);
@@ -83,6 +112,7 @@ namespace Example3.Models
                     Game.isActive = false;
                 }
             }
+
 
         }
     }
