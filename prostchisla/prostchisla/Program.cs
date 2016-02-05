@@ -11,10 +11,10 @@ namespace prostchisla
         static void Main(string[] args)
         {
             F1();
-            F2()2;
+            F2();
 
         }
-        //vvela kommentjjkkl
+        //vvela kommentjjkklkkk
         private static void F2()
         {
             FileStream fs = new FileStream("input.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
