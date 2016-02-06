@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Example3.Models
-{
+{   [Serializable]
     public class Game
     {
         public static bool isActive;
@@ -72,7 +72,7 @@ namespace Example3.Models
             food.Resume();
         }
 
-        /*
+        
         public static void Save2()
         {
             wall.Save2();
@@ -86,13 +86,18 @@ namespace Example3.Models
             snake.Resume2();
             food.Resume2();
         }
-*/
+
         public static void Draw()
         {
             Console.Clear();
             snake.Draw();
             food.Draw();
             wall.Draw();
+            Console.SetCursorPosition(0, 46);
+   
+            Console.WriteLine("Уровень: {0} ",Program.Level);
+            Console.SetCursorPosition(0, 47);
+            Console.WriteLine("Cчет: {0} ",Game.snake.body.Count-1);//эта функция считывает размер змейки,соответсвенно если отнять 1 -количество съеденной еды это счет,после перехода на новый уровень он обнуляется
         }
     }
 }

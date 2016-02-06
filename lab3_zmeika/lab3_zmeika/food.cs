@@ -8,6 +8,7 @@ namespace Example3.Models
 {
     public class Food : Drawer// наследует все функции,методы от класса drawer
     {
+        [Serializable]
         public Food()// конструктор
         {
             sign = '$';

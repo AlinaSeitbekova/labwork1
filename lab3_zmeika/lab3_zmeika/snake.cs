@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Example3.Models
 {
+    [Serializable]
     public class Snake : Drawer// наследует методы ,свойства от класса drawer
     {
         public int MyProperty { get; set; }
@@ -35,7 +36,7 @@ namespace Example3.Models
                 // нужно чтобы змея не выходила за границы окна консоли размером 48*48 ,поэтому рассмотрела 4 случая (для каждой стороны квадрата окна консоли)
 
                 if (Game.snake.body[0].x == Game.wall.body[i].x &&
-       Game.snake.body[0].y == Game.wall.body[i].y || Game.snake.body[0].y < Console.WindowHeight - 47 || Game.snake.body[0].y > Console.WindowHeight - 1 || Game.snake.body[0].x > Console.WindowHeight - 1 || Game.snake.body[0].x < Console.WindowHeight - 47)
+       Game.snake.body[0].y == Game.wall.body[i].y || Game.snake.body[0].y < Console.WindowHeight - 48 || Game.snake.body[0].y > Console.WindowHeight - 0 || Game.snake.body[0].x > Console.WindowHeight - 0 || Game.snake.body[0].x < Console.WindowHeight - 48)
                 {
                     Console.Clear();
                     Console.SetCursorPosition(20, 10);
@@ -48,7 +49,7 @@ namespace Example3.Models
                 if (Game.snake.body[0].x == Game.food.body[0].x &&
                    Game.snake.body[0].y == Game.food.body[0].y)//если змейка попала на еду,координаты совпадут
                 {
-                    score++;
+                    //score++;
                    
 
                     Game.snake.body.Add(new Point
@@ -57,20 +58,19 @@ namespace Example3.Models
                         y = Game.food.body[0].y
                     });
 // ЗАДАНИЕ4! индикатор очков и уровня 
-
-                    Console.WriteLine(score);
-                    Console.WriteLine("вы на {0} уровне", cnt);
+                  
 
 
                     //ЗАДАНИЕ 3!
                     // если змейка съела  4 еды,то новый уровень
-                    if (score%4==0)
+                    if (Game.snake.body.Count>4)
                     {
-                        cnt++;// показывает уровень игры,карты
+                        Program.Level++;// показывает уровень игры,карты
                         
                         Game.snake.body.Clear(); // уменьшаем змейку так как прошли новый уровень
                         Game.food.body.Clear();
-                        Game.LoadlLevel(cnt);// открываем  новую карту
+                        Game.LoadlLevel(Program.Level);// открываем  новую карту
+
 
                         Game.snake.body.Add(new Point { x = 3, y = 3 });
                         Game.food.body.Add(new Point { x = 28, y = 1 });

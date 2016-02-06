@@ -5,7 +5,8 @@ using System.Text;
 
 
   namespace Example3.Models
-{
+  {
+      [Serializable]
     public class Point
     {
         public int x;

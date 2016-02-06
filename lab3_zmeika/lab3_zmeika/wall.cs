@@ -8,6 +8,8 @@ namespace Example3.Models
 {
     public class Wall : Drawer
     {
+        [Serializable]
+        
         public Wall()
         {
             sign = '#';
