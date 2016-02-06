@@ -14,6 +14,7 @@ namespace Example3.Models
         public ConsoleColor color;
         public char sign;
         public int score=0;
+        public int cnt=1;
         public Drawer()
         {
             color = ConsoleColor.Blue;
