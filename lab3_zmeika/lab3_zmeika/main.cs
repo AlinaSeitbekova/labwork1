@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Example3
 {
+   // [Serializable]
     class Program
     {
         public static int Level = 1;
@@ -38,12 +39,14 @@ namespace Example3
                     case ConsoleKey.Escape:
                         Game.isActive = false;
                         break;
+                    /*
                     case ConsoleKey.F2:
                         Game.Save();
                         break;
                     case ConsoleKey.F3:
                         Game.Resume();
                         break;
+                     */
                    
                     case ConsoleKey.F4:
                         Game.Save2();// бинарный формат

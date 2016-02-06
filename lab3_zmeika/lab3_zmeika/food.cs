@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Example3.Models
 {
+    [Serializable]
     public class Food : Drawer// наследует все функции,методы от класса drawer
     {
-        [Serializable]
         public Food()// конструктор
         {
             sign = '$';

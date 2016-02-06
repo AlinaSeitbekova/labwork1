@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Example3.Models
-{   [Serializable]
+{
+    [Serializable]
     public class Game
     {
         public static bool isActive;
@@ -57,8 +58,8 @@ namespace Example3.Models
             sr.Close();
             fs.Close();
         }
-
-        public static void Save()
+    /*
+       public static void Save()
         {
             wall.Save();
             snake.Save();
@@ -71,7 +72,7 @@ namespace Example3.Models
             snake.Resume();
             food.Resume();
         }
-
+    */
         
         public static void Save2()
         {
