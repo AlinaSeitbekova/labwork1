@@ -43,6 +43,14 @@ namespace Example3
                     case ConsoleKey.F3:
                         Game.Resume();
                         break;
+                   /*
+                    case ConsoleKey.F4:
+                        Game.Save2();// бинарный формат
+                        break;
+                    case ConsoleKey.F5:
+                        Game.Resume2();// бинарный формат
+                        break;
+                    */
                 }
             }
 

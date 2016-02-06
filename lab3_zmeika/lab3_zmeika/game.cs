@@ -72,6 +72,21 @@ namespace Example3.Models
             food.Resume();
         }
 
+        /*
+        public static void Save2()
+        {
+            wall.Save2();
+            snake.Save2();
+            food.Save2();
+        }
+
+        public static void Resume2()
+        {
+            wall.Resume2();
+            snake.Resume2();
+            food.Resume2();
+        }
+*/
         public static void Draw()
         {
             Console.Clear();

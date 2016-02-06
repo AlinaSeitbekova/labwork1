@@ -50,5 +50,33 @@ namespace Example3.Models
             if (t == typeof(Food)) Game.food = xs.Deserialize(fs) as Food;
             fs.Close();
         }
+
+//ЗАДАНИЕ 5!
+//бинарная сериализация и десериализация
+//
+        /*
+        public void Save2()
+        {
+            Type t = GetType();
+            FileStream fs = new FileStream(string.Format("{0}.xml", t.Name), FileMode.Create, FileAccess.Write);
+            BinaryFormatter bf = new BinaryFormatter();
+            
+            bf.Serialize(fs, this);
+            fs.Close();
+        }
+
+        public void Resume2()
+        {
+            Type t = GetType();
+            FileStream fs = new FileStream(string.Format("{0}.xml", t.Name), FileMode.Open, FileAccess.Read);
+            BinaryFormatter bf = new BinaryFormatter();
+
+            if (t == typeof(Wall)) Game.wall = bf.Deserialize(fs) as Wall;
+            if (t == typeof(Snake)) Game.snake = bf.Deserialize(fs) as Snake;
+            if (t == typeof(Food)) Game.food = bf.Deserialize(fs) as Food;
+            fs.Close();
+         }
+        
+         */
     }
 }
