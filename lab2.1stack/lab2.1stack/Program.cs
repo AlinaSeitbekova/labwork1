@@ -11,7 +11,7 @@ namespace Lab2
     {
         static void Main(string[] args)
         {
-            f(@"C:\Activators");
+            f(@"C:\Users\Home\Desktop\1 курс 1 семестр (2)\1 курс 2 семестр");
             Console.ReadKey();
         }
         public static void f(string path)
