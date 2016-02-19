@@ -30,5 +30,65 @@ namespace calculator
         {
 
         }
+
+        private void tab0_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tab4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void operation_click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void memory_click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tab_click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void result_click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ce_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void c_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }

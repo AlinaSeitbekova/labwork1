@@ -73,6 +73,16 @@ namespace calculator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _37000_jpg_500_380_cat {
+            get {
+                object obj = ResourceManager.GetObject("37000.jpg_500_380_cat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ahZRkFv4zow {
             get {
                 object obj = ResourceManager.GetObject("ahZRkFv4zow", resourceCulture);
