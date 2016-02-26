@@ -86,7 +86,7 @@ namespace Calc
                 case "-":
                     caclulator.operation = Operation.Minus;
                     break;
-                case " * ":
+                case "*":
                     caclulator.operation = Operation.Multiplication;
                     break;
                 case "/":
