@@ -67,7 +67,7 @@ namespace Example2
             sw.WriteLine("1 2 9 4 5 6 8");
 
             sw.Close();
-            fs.Close();
+            fs.Close()
         }
     }
 }

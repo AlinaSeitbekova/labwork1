@@ -10,7 +10,7 @@ using System.Windows.Forms;
 namespace Calc
 {
 
-    public enum State// spravochnik
+    public enum State
     {
         WaitingForFirstNumber,
         WaitingForSecondNumber,
@@ -76,7 +76,7 @@ namespace Calc
                       
             caclulator.firstNumber = double.Parse(display.Text);//чтобы преобразовать в числовое выражение
             caclulator.currentState = State.WaitingForSecondNumber;
-           // operation = btn.Text;
+           
 
            switch (btn.Text)
             {
