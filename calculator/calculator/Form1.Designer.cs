@@ -1,4 +1,4 @@
-﻿namespace calculator
+﻿namespace Calc
 {
     partial class Form1
     {
@@ -36,7 +36,7 @@
             this.operation_division = new System.Windows.Forms.Button();
             this.operation_sqrt = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
-            this.operation_multiplicat = new System.Windows.Forms.Button();
+            this.operation_multiplication = new System.Windows.Forms.Button();
             this.operation_procent = new System.Windows.Forms.Button();
             this.button24 = new System.Windows.Forms.Button();
             this.operation_minus = new System.Windows.Forms.Button();
@@ -67,9 +67,9 @@
             this.button8.Location = new System.Drawing.Point(364, 104);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(50, 30);
-            this.button8.TabIndex = 13;
+            this.button8.TabIndex = 20;
             this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.button8.Click += new System.EventHandler(this.memory_click);
             // 
             // button9
             // 
@@ -80,10 +80,10 @@
             this.button9.Location = new System.Drawing.Point(155, 104);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(50, 30);
-            this.button9.TabIndex = 12;
+            this.button9.TabIndex = 21;
             this.button9.Text = "Back";
             this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.button9.Click += new System.EventHandler(this.clear_click);
             // 
             // ce
             // 
@@ -94,10 +94,10 @@
             this.ce.Location = new System.Drawing.Point(82, 104);
             this.ce.Name = "ce";
             this.ce.Size = new System.Drawing.Size(50, 30);
-            this.ce.TabIndex = 11;
+            this.ce.TabIndex = 22;
             this.ce.Text = "CE";
             this.ce.UseVisualStyleBackColor = false;
-            this.ce.Click += new System.EventHandler(this.ce_Click);
+            this.ce.Click += new System.EventHandler(this.clear_click);
             // 
             // c
             // 
@@ -108,10 +108,10 @@
             this.c.Location = new System.Drawing.Point(14, 104);
             this.c.Name = "c";
             this.c.Size = new System.Drawing.Size(50, 30);
-            this.c.TabIndex = 10;
+            this.c.TabIndex = 23;
             this.c.Text = "C";
             this.c.UseVisualStyleBackColor = false;
-            this.c.Click += new System.EventHandler(this.c_Click);
+            this.c.Click += new System.EventHandler(this.clear_click);
             // 
             // operation_division
             // 
@@ -122,7 +122,7 @@
             this.operation_division.Location = new System.Drawing.Point(301, 145);
             this.operation_division.Name = "operation_division";
             this.operation_division.Size = new System.Drawing.Size(50, 30);
-            this.operation_division.TabIndex = 16;
+            this.operation_division.TabIndex = 12;
             this.operation_division.Text = "/";
             this.operation_division.UseVisualStyleBackColor = false;
             this.operation_division.Click += new System.EventHandler(this.operation_click);
@@ -135,10 +135,10 @@
             this.operation_sqrt.Location = new System.Drawing.Point(364, 145);
             this.operation_sqrt.Name = "operation_sqrt";
             this.operation_sqrt.Size = new System.Drawing.Size(50, 30);
-            this.operation_sqrt.TabIndex = 20;
+            this.operation_sqrt.TabIndex = 19;
             this.operation_sqrt.Text = "sqrt";
             this.operation_sqrt.UseVisualStyleBackColor = false;
-            this.operation_sqrt.Click += new System.EventHandler(this.operation_click);
+            this.operation_sqrt.Click += new System.EventHandler(this.resultoper_click);
             // 
             // button18
             // 
@@ -152,19 +152,19 @@
             this.button18.UseVisualStyleBackColor = false;
             this.button18.Click += new System.EventHandler(this.memory_click);
             // 
-            // operation_multiplicat
+            // operation_multiplication
             // 
-            this.operation_multiplicat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.operation_multiplicat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.operation_multiplicat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.operation_multiplicat.ForeColor = System.Drawing.Color.Red;
-            this.operation_multiplicat.Location = new System.Drawing.Point(301, 185);
-            this.operation_multiplicat.Name = "operation_multiplicat";
-            this.operation_multiplicat.Size = new System.Drawing.Size(50, 30);
-            this.operation_multiplicat.TabIndex = 15;
-            this.operation_multiplicat.Text = "*";
-            this.operation_multiplicat.UseVisualStyleBackColor = false;
-            this.operation_multiplicat.Click += new System.EventHandler(this.operation_click);
+            this.operation_multiplication.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.operation_multiplication.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.operation_multiplication.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.operation_multiplication.ForeColor = System.Drawing.Color.Red;
+            this.operation_multiplication.Location = new System.Drawing.Point(301, 185);
+            this.operation_multiplication.Name = "operation_multiplication";
+            this.operation_multiplication.Size = new System.Drawing.Size(50, 30);
+            this.operation_multiplication.TabIndex = 13;
+            this.operation_multiplication.Text = "*";
+            this.operation_multiplication.UseVisualStyleBackColor = false;
+            this.operation_multiplication.Click += new System.EventHandler(this.operation_click);
             // 
             // operation_procent
             // 
@@ -173,10 +173,10 @@
             this.operation_procent.Location = new System.Drawing.Point(364, 185);
             this.operation_procent.Name = "operation_procent";
             this.operation_procent.Size = new System.Drawing.Size(50, 30);
-            this.operation_procent.TabIndex = 19;
+            this.operation_procent.TabIndex = 18;
             this.operation_procent.Text = "%";
             this.operation_procent.UseVisualStyleBackColor = false;
-            this.operation_procent.Click += new System.EventHandler(this.operation_click);
+            this.operation_procent.Click += new System.EventHandler(this.resultoper_click);
             // 
             // button24
             // 
@@ -211,10 +211,10 @@
             this.operation_delitnax.Location = new System.Drawing.Point(364, 221);
             this.operation_delitnax.Name = "operation_delitnax";
             this.operation_delitnax.Size = new System.Drawing.Size(50, 30);
-            this.operation_delitnax.TabIndex = 18;
+            this.operation_delitnax.TabIndex = 17;
             this.operation_delitnax.Text = "1/x";
             this.operation_delitnax.UseVisualStyleBackColor = false;
-            this.operation_delitnax.Click += new System.EventHandler(this.operation_click);
+            this.operation_delitnax.Click += new System.EventHandler(this.resultoper_click);
             // 
             // button30
             // 
@@ -223,7 +223,7 @@
             this.button30.Location = new System.Drawing.Point(14, 221);
             this.button30.Name = "button30";
             this.button30.Size = new System.Drawing.Size(50, 30);
-            this.button30.TabIndex = 23;
+            this.button30.TabIndex = 26;
             this.button30.Text = "MS";
             this.button30.UseVisualStyleBackColor = false;
             this.button30.Click += new System.EventHandler(this.memory_click);
@@ -237,7 +237,7 @@
             this.operation_plus.Location = new System.Drawing.Point(301, 257);
             this.operation_plus.Name = "operation_plus";
             this.operation_plus.Size = new System.Drawing.Size(50, 30);
-            this.operation_plus.TabIndex = 13;
+            this.operation_plus.TabIndex = 15;
             this.operation_plus.Text = "+";
             this.operation_plus.UseVisualStyleBackColor = false;
             this.operation_plus.Click += new System.EventHandler(this.operation_click);
@@ -251,7 +251,7 @@
             this.result.Location = new System.Drawing.Point(364, 257);
             this.result.Name = "result";
             this.result.Size = new System.Drawing.Size(50, 30);
-            this.result.TabIndex = 17;
+            this.result.TabIndex = 16;
             this.result.Text = "=";
             this.result.UseVisualStyleBackColor = false;
             this.result.Click += new System.EventHandler(this.result_click);
@@ -263,7 +263,7 @@
             this.button36.Location = new System.Drawing.Point(14, 257);
             this.button36.Name = "button36";
             this.button36.Size = new System.Drawing.Size(50, 30);
-            this.button36.TabIndex = 22;
+            this.button36.TabIndex = 27;
             this.button36.Text = "M+";
             this.button36.UseVisualStyleBackColor = false;
             this.button36.Click += new System.EventHandler(this.memory_click);
@@ -280,7 +280,7 @@
             this.tab10.Location = new System.Drawing.Point(155, 257);
             this.tab10.Name = "tab10";
             this.tab10.Size = new System.Drawing.Size(50, 30);
-            this.tab10.TabIndex = 36;
+            this.tab10.TabIndex = 28;
             this.tab10.Text = "+/-";
             this.tab10.UseVisualStyleBackColor = false;
             this.tab10.Click += new System.EventHandler(this.tab_click);
@@ -297,7 +297,7 @@
             this.tab11.Location = new System.Drawing.Point(229, 257);
             this.tab11.Name = "tab11";
             this.tab11.Size = new System.Drawing.Size(50, 30);
-            this.tab11.TabIndex = 35;
+            this.tab11.TabIndex = 29;
             this.tab11.Text = ".";
             this.tab11.UseVisualStyleBackColor = false;
             this.tab11.Click += new System.EventHandler(this.tab_click);
@@ -314,7 +314,7 @@
             this.tab0.Location = new System.Drawing.Point(82, 257);
             this.tab0.Name = "tab0";
             this.tab0.Size = new System.Drawing.Size(50, 30);
-            this.tab0.TabIndex = 0;
+            this.tab0.TabIndex = 1;
             this.tab0.Text = "0";
             this.tab0.UseVisualStyleBackColor = false;
             this.tab0.Click += new System.EventHandler(this.tab_click);
@@ -331,7 +331,7 @@
             this.tab2.Location = new System.Drawing.Point(155, 221);
             this.tab2.Name = "tab2";
             this.tab2.Size = new System.Drawing.Size(50, 30);
-            this.tab2.TabIndex = 2;
+            this.tab2.TabIndex = 3;
             this.tab2.Text = "2";
             this.tab2.UseVisualStyleBackColor = false;
             this.tab2.Click += new System.EventHandler(this.tab_click);
@@ -348,7 +348,7 @@
             this.tab3.Location = new System.Drawing.Point(229, 221);
             this.tab3.Name = "tab3";
             this.tab3.Size = new System.Drawing.Size(50, 30);
-            this.tab3.TabIndex = 3;
+            this.tab3.TabIndex = 4;
             this.tab3.Text = "3";
             this.tab3.UseVisualStyleBackColor = false;
             this.tab3.Click += new System.EventHandler(this.tab_click);
@@ -365,7 +365,7 @@
             this.tab1.Location = new System.Drawing.Point(82, 221);
             this.tab1.Name = "tab1";
             this.tab1.Size = new System.Drawing.Size(50, 30);
-            this.tab1.TabIndex = 1;
+            this.tab1.TabIndex = 2;
             this.tab1.Text = "1";
             this.tab1.UseVisualStyleBackColor = false;
             this.tab1.Click += new System.EventHandler(this.tab_click);
@@ -382,7 +382,7 @@
             this.tab5.Location = new System.Drawing.Point(155, 185);
             this.tab5.Name = "tab5";
             this.tab5.Size = new System.Drawing.Size(50, 30);
-            this.tab5.TabIndex = 5;
+            this.tab5.TabIndex = 6;
             this.tab5.Text = "5";
             this.tab5.UseVisualStyleBackColor = false;
             this.tab5.Click += new System.EventHandler(this.tab_click);
@@ -399,7 +399,7 @@
             this.tab6.Location = new System.Drawing.Point(229, 185);
             this.tab6.Name = "tab6";
             this.tab6.Size = new System.Drawing.Size(50, 30);
-            this.tab6.TabIndex = 6;
+            this.tab6.TabIndex = 7;
             this.tab6.Text = "6";
             this.tab6.UseVisualStyleBackColor = false;
             this.tab6.Click += new System.EventHandler(this.tab_click);
@@ -416,7 +416,7 @@
             this.tab4.Location = new System.Drawing.Point(82, 185);
             this.tab4.Name = "tab4";
             this.tab4.Size = new System.Drawing.Size(50, 30);
-            this.tab4.TabIndex = 4;
+            this.tab4.TabIndex = 5;
             this.tab4.Text = "4";
             this.tab4.UseVisualStyleBackColor = false;
             this.tab4.Click += new System.EventHandler(this.tab_click);
@@ -433,7 +433,7 @@
             this.tab8.Location = new System.Drawing.Point(155, 145);
             this.tab8.Name = "tab8";
             this.tab8.Size = new System.Drawing.Size(50, 30);
-            this.tab8.TabIndex = 8;
+            this.tab8.TabIndex = 9;
             this.tab8.Text = "8";
             this.tab8.UseVisualStyleBackColor = false;
             this.tab8.Click += new System.EventHandler(this.tab_click);
@@ -450,7 +450,7 @@
             this.tab9.Location = new System.Drawing.Point(229, 145);
             this.tab9.Name = "tab9";
             this.tab9.Size = new System.Drawing.Size(50, 30);
-            this.tab9.TabIndex = 9;
+            this.tab9.TabIndex = 10;
             this.tab9.Text = "9";
             this.tab9.UseVisualStyleBackColor = false;
             this.tab9.Click += new System.EventHandler(this.tab_click);
@@ -467,7 +467,7 @@
             this.tab7.Location = new System.Drawing.Point(82, 145);
             this.tab7.Name = "tab7";
             this.tab7.Size = new System.Drawing.Size(50, 30);
-            this.tab7.TabIndex = 7;
+            this.tab7.TabIndex = 8;
             this.tab7.Text = "7";
             this.tab7.UseVisualStyleBackColor = false;
             this.tab7.Click += new System.EventHandler(this.tab_click);
@@ -477,9 +477,10 @@
             this.display.Location = new System.Drawing.Point(14, 55);
             this.display.Name = "display";
             this.display.Size = new System.Drawing.Size(400, 20);
-            this.display.TabIndex = 21;
+            this.display.TabIndex = 11;
             this.display.Text = "0";
             this.display.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.display.Click += new System.EventHandler(this.display_click);
             // 
             // linkLabel1
             // 
@@ -513,7 +514,7 @@
             this.Controls.Add(this.tab3);
             this.Controls.Add(this.tab1);
             this.Controls.Add(this.button30);
-            this.Controls.Add(this.operation_multiplicat);
+            this.Controls.Add(this.operation_multiplication);
             this.Controls.Add(this.operation_procent);
             this.Controls.Add(this.tab5);
             this.Controls.Add(this.tab6);
@@ -555,7 +556,7 @@
         private System.Windows.Forms.Button tab9;
         private System.Windows.Forms.Button tab7;
         private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button operation_multiplicat;
+        private System.Windows.Forms.Button operation_multiplication;
         private System.Windows.Forms.Button operation_procent;
         private System.Windows.Forms.Button tab5;
         private System.Windows.Forms.Button tab6;
