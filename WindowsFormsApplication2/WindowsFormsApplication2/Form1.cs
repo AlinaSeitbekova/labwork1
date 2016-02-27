@@ -33,10 +33,19 @@ namespace WindowsFormsApplication2
                 case State.WaitingForFirstNumber:
                     caclulator.currentState = State.WaitingForOperation;
                     break;
-                case State.WaitingForSecondNumber:
-                    caclulator.currentState = State.WaitingForResult;
-                    display.Text = "";
+                case State.WaitingForSecondNumber: // ввели 2 число 
+                    //caclulator.firstNumber = double.Parse(display.Text);  
+                     display.Text = "";//чтобы обнулился экран от 1 числа
+                     caclulator.currentState = State.WaitingForResult;
+                     //caclulator.secondNumber = double.Parse(display.Text);
+                    
+                     //caclulator.Evaluate(display.Text);
+                    //display.Text =calculator.resultNumber;
                     break;
+              //  case State.WaitingForResult:
+                   // caclulator.secondNumber = double.Parse(display.Text);
+                    //break;
+               
             }
             if (btn.Text == ".")
             {
@@ -45,7 +54,7 @@ namespace WindowsFormsApplication2
             }
             else
 
-                display.Text += btn.Text;
+                display.Text += btn.Text;// считывает число и выводит на экран
         }
 
 
@@ -56,9 +65,17 @@ namespace WindowsFormsApplication2
         {
             Button btn = sender as Button;
 
+            
+                      
+            
+            if (caclulator.currentState == State.WaitingForResult)//то есть если уже два числа ввели и хотим дальше продолжить
+            {
+                display.Text= caclulator.Evaluate(display.Text);
+                
+            }
             caclulator.firstNumber = double.Parse(display.Text);//чтобы преобразовать в числовое выражение
             caclulator.currentState = State.WaitingForSecondNumber;
-
+            
 
             switch (btn.Text)
             {
@@ -76,23 +93,26 @@ namespace WindowsFormsApplication2
                     break;
             }
         }
-
+        
 
 
         private void resultoper_click(object sender, EventArgs e)
-        {
-            /*Button operationresult = sender as Button;
+        {   /*
+            Button operationresult = sender as Button;
             string operationres = operationresult.Text;
             display.Text = caclulator.Evaluateoper(display.Text);
+           
+            
            //Button btn = sender as Button;
-          */
+          
             //calculator.secondNumber = double.Parse(display.Text)
+             */
         }
 
 
         private void result_click(object sender, EventArgs e)
         {
-            display.Text = caclulator.Evaluate(display.Text);
+            display.Text = caclulator.Evaluate(display.Text);//
         }
 
 

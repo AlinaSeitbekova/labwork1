@@ -34,10 +34,10 @@ namespace WindowsFormsApplication2.Model
         public Operation operation = Operation.None;
         public string operationres;
 
-        public string Evaluate(string text)
+        public string Evaluate(string text)//secondnumbers text
         {
             secondNumber = double.Parse(text);
-            currentState = State.WaitingForFirstNumber;
+
 
             switch (operation)
             {
@@ -59,10 +59,40 @@ namespace WindowsFormsApplication2.Model
                 default:
                     break;
             }
-
+            firstNumber = resultNumber;
+            currentState = State.WaitingForOperation;//!!
             return resultNumber.ToString();
+           
 
         }
+
+
+     /*   public string Evaluateoper(string text)
+        {
+            secondNumber = double.Parse(text);
+           // currentState = State.WaitingForFirstNumber;
+
+            //
+            // рассмотреть 3 случая надо
+            switch (currentState)// now CS is waiting1number
+            {
+                case State.WaitingForOperation:// значит тут только одно число ,либо нечетное количество(то есть sqrt for firstnumber ввели только что)
+                    currentState = State.WaitingForResult;
+
+                    break;
+                case State.WaitingForSecondNumber:
+                    currentState = State.WaitingForResult;
+                    text = "";
+                    break;
+
+                case State.WaitingForResult:
+                    currentState = State.WaitingForResult;
+                    text = "";
+                    break;
+            }
+            return resultNumber.ToString();
+        }
+
 
         /*  public string Evaluateoper(string text)
           {
