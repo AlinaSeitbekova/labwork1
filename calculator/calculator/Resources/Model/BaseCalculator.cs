@@ -6,6 +6,26 @@ using System.Threading.Tasks;
 
 namespace Calc.Model
 {
+
+    public enum State
+    {
+        WaitingForFirstNumber,
+        WaitingForSecondNumber,
+        WaitingForOperation,
+        WaitingForResult,
+    }
+
+    public enum Operation
+    {
+        None,
+        Plus,
+        Minus,
+        Divide,
+        Multiplication
+    }
+
+
+
     public class BaseCalculator
     {
         public double firstNumber = 0;
