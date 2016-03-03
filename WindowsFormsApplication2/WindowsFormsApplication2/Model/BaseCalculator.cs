@@ -34,12 +34,49 @@ namespace WindowsFormsApplication2.Model
         public Operation operation = Operation.None;
         public string operationres;
 
-        public string Evaluate(string text)//secondnumbers text
+        public string Evaluate(string text)//secondnumbers text(+в случае когда прибавляем() третье число к первому и второму сразу без равно
         {
             secondNumber = double.Parse(text);
 
+            
+           
+           
 
-            switch (operation)
+            // 2CЛУЧАЙ ДЛЯ % ,SQRT когда ввели уже второе число,нажали на знак и равно
+            switch (operationres)
+            {
+                case "sqrt":
+
+                    switch (operation)
+                    {
+                        case Operation.None:
+                            break;
+                        case Operation.Plus:
+                            resultNumber = firstNumber + Math.Sqrt(secondNumber);
+                            break;
+                        case Operation.Minus:
+                            resultNumber = firstNumber - Math.Sqrt(secondNumber);
+                            break;
+                        case Operation.Divide:
+                            resultNumber = firstNumber / Math.Sqrt(secondNumber);
+                            break;
+                        case Operation.Multiplication:
+                            resultNumber = firstNumber * Math.Sqrt(secondNumber);
+                            break;
+
+                        default:
+                            break;
+                    }
+
+                    break;
+
+                default:
+                    break;
+
+            }
+
+            
+            switch (operation)//  если в случае 5+2-3 то операция первая (+)
             {
                 case Operation.None:
                     break;
@@ -59,15 +96,56 @@ namespace WindowsFormsApplication2.Model
                 default:
                     break;
             }
-            firstNumber = resultNumber;
-            currentState = State.WaitingForOperation;//!!
-            return resultNumber.ToString();
-           
+             firstNumber = resultNumber;
+              currentState = State.WaitingForOperation;//!!
+            
+                /*  case "%":
+
+                      switch (operation)
+                      {
+                          case Operation.None:
+                              break;
+                          case Operation.Plus:
+                              resultNumber = firstNumber + (secondNumber / 100.0) * firstNumber;
+                              break;
+                          case Operation.Minus:
+                              resultNumber = firstNumber - (secondNumber / 100.0) * firstNumber;
+                              break;
+                          case Operation.Divide:
+                              resultNumber = 100.0 / secondNumber;
+                              break;
+                          case Operation.Multiplication:
+                              resultNumber = firstNumber * secondNumber * (firstNumber / 100.0);
+                              break;
+
+                          default:
+                              break;
+                      }
+                      break;
+
+                  case "1/x":
+                      resultNumber = 1 / secondNumber;
+                      break;
+
+                     */
+            
+                         
+                     
+        
+             
+
+
+            
+
+            
+            return resultNumber.ToString();// выводит на экран,поэтому как только нажали вторую операцию(и тд) он сразу выводит трезультат 
+
 
         }
 
 
-     /*   public string Evaluateoper(string text)
+     
+      public string Evaluateoper(string text)
         {
             secondNumber = double.Parse(text);
            // currentState = State.WaitingForFirstNumber;

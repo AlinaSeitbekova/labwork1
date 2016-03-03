@@ -34,14 +34,9 @@ namespace WindowsFormsApplication2
                     caclulator.currentState = State.WaitingForOperation;
                     break;
                 case State.WaitingForSecondNumber: // ввели 2 число 
-                    //caclulator.firstNumber = double.Parse(display.Text);  
                      display.Text = "";//чтобы обнулился экран от 1 числа
                      caclulator.currentState = State.WaitingForResult;
-                     //caclulator.secondNumber = double.Parse(display.Text);
-                    
-                     //caclulator.Evaluate(display.Text);
-                    //display.Text =calculator.resultNumber;
-                    break;
+                     break;
               //  case State.WaitingForResult:
                    // caclulator.secondNumber = double.Parse(display.Text);
                     //break;
@@ -68,12 +63,13 @@ namespace WindowsFormsApplication2
             
                       
             
-            if (caclulator.currentState == State.WaitingForResult)//то есть если уже два числа ввели и хотим дальше продолжить
+            if (caclulator.currentState == State.WaitingForResult)//!!то есть если уже два числа ввели и хотим дальше продолжить(сложить с 3)
             {
-                display.Text= caclulator.Evaluate(display.Text);
-                
+                display.Text = caclulator.Evaluate(display.Text);// к этому моменту первое число уже преобразовано,второе на  экране// отобразится результат 1+2 как одно новое первое число
+                // evaluate- first and second number evaluation
             }
-            caclulator.firstNumber = double.Parse(display.Text);//чтобы преобразовать в числовое выражение
+            // они внизу,так как иначе он считывает второе число как первое в случае  прибавления третьего числа
+            caclulator.firstNumber = double.Parse(display.Text);//чтобы преобразовать в числовое выражение 
             caclulator.currentState = State.WaitingForSecondNumber;
             
 
@@ -97,21 +93,35 @@ namespace WindowsFormsApplication2
 
 
         private void resultoper_click(object sender, EventArgs e)
-        {   /*
+        {   
             Button operationresult = sender as Button;
             string operationres = operationresult.Text;
-            display.Text = caclulator.Evaluateoper(display.Text);
+
+            //       !!1СЛУЧАЙ  когда ввели одно число и хотим найти процент или корень
+            //
+            if (caclulator.currentState == State.WaitingForOperation)
+            {
+                caclulator.firstNumber = double.Parse(display.Text);
+                // switch dlya procenta i sqrt
+                caclulator.resultNumber = Math.Sqrt(caclulator.firstNumber);
+                display.Text = caclulator.resultNumber.ToString();
+                //
+            }
+
+            // display.Text = operationresult.Text;
+            //display.Text = caclulator.Evaluateoper(display.Text);
            
             
            //Button btn = sender as Button;
           
             //calculator.secondNumber = double.Parse(display.Text)
-             */
+            
         }
 
 
         private void result_click(object sender, EventArgs e)
         {
+            
             display.Text = caclulator.Evaluate(display.Text);//
         }
 
