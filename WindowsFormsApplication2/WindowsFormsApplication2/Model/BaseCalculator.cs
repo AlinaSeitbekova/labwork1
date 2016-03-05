@@ -36,187 +36,114 @@ namespace WindowsFormsApplication2.Model
 
         public string Evaluate(string text)//secondnumbers text(+в случае когда прибавляем() третье число к первому и второму сразу без равно
         {
+             if( operationres != "%")
+                {
             secondNumber = double.Parse(text);
 
-            
-           
-           
+                       
+                switch (operation)//  если в случае 5+2-3 то операция первая (+)
+                {
+                    case Operation.None:
+                        break;
+                    case Operation.Plus:
+                        resultNumber = firstNumber + secondNumber;
+                        break;
+                    case Operation.Minus:
+                        resultNumber = firstNumber - secondNumber;
+                        break;
+                    case Operation.Divide:
+                        resultNumber = firstNumber / secondNumber;
+                        break;
+                    case Operation.Multiplication:
+                        resultNumber = firstNumber * secondNumber;
+                        break;
 
-            // 2CЛУЧАЙ ДЛЯ % ,SQRT когда ввели уже второе число,нажали на знак и равно
-            switch (operationres)
-            {
-                case "sqrt":
+                    default:
+                        break;
+                }
+                firstNumber = resultNumber;
+                currentState = State.WaitingForOperation;//!!
+                }
 
-                    switch (operation)
-                    {
-                        case Operation.None:
-                            break;
-                        case Operation.Plus:
-                            resultNumber = firstNumber + Math.Sqrt(secondNumber);
-                            break;
-                        case Operation.Minus:
-                            resultNumber = firstNumber - Math.Sqrt(secondNumber);
-                            break;
-                        case Operation.Divide:
-                            resultNumber = firstNumber / Math.Sqrt(secondNumber);
-                            break;
-                        case Operation.Multiplication:
-                            resultNumber = firstNumber * Math.Sqrt(secondNumber);
-                            break;
+             else if (currentState == State.WaitingForFirstNumber)//to est vveli odno chislo            {
+             {
+                 if( operationres == "%")
+                 {
+                         switch (operation)
+                         {
+                             case Operation.None:
+                                 break;
+                             case Operation.Plus:
+                                 resultNumber = firstNumber + (secondNumber / 100.0) * firstNumber;
+                                 break;
+                             case Operation.Minus:
+                                 resultNumber = firstNumber - (secondNumber / 100.0) * firstNumber;
+                                 break;
+                             case Operation.Divide:
+                                 resultNumber = 100.0 / secondNumber;
+                                 break;
+                             case Operation.Multiplication:
+                                 resultNumber = firstNumber * secondNumber * (firstNumber / 100.0);
+                                 break;
 
-                        default:
-                            break;
-                    }
-
-                    break;
-
-                default:
-                    break;
-
-            }
-
-            
-            switch (operation)//  если в случае 5+2-3 то операция первая (+)
-            {
-                case Operation.None:
-                    break;
-                case Operation.Plus:
-                    resultNumber = firstNumber + secondNumber;
-                    break;
-                case Operation.Minus:
-                    resultNumber = firstNumber - secondNumber;
-                    break;
-                case Operation.Divide:
-                    resultNumber = firstNumber / secondNumber;
-                    break;
-                case Operation.Multiplication:
-                    resultNumber = firstNumber * secondNumber;
-                    break;
-
-                default:
-                    break;
-            }
-             firstNumber = resultNumber;
-              currentState = State.WaitingForOperation;//!!
-            
-                /*  case "%":
-
-                      switch (operation)
-                      {
-                          case Operation.None:
-                              break;
-                          case Operation.Plus:
-                              resultNumber = firstNumber + (secondNumber / 100.0) * firstNumber;
-                              break;
-                          case Operation.Minus:
-                              resultNumber = firstNumber - (secondNumber / 100.0) * firstNumber;
-                              break;
-                          case Operation.Divide:
-                              resultNumber = 100.0 / secondNumber;
-                              break;
-                          case Operation.Multiplication:
-                              resultNumber = firstNumber * secondNumber * (firstNumber / 100.0);
-                              break;
-
-                          default:
-                              break;
-                      }
-                      break;
-
-                  case "1/x":
-                      resultNumber = 1 / secondNumber;
-                      break;
-
-                     */
-            
-                         
-                     
-        
-             
+                             default:
+                                 break;
+                         }  
+                       
+                 }
 
 
+
+             }
+                
+               
             
 
-            
+            /*  case "%":
+
+                  switch (operation)
+                  {
+                      case Operation.None:
+                          break;
+                      case Operation.Plus:
+                          resultNumber = firstNumber + (secondNumber / 100.0) * firstNumber;
+                          break;
+                      case Operation.Minus:
+                          resultNumber = firstNumber - (secondNumber / 100.0) * firstNumber;
+                          break;
+                      case Operation.Divide:
+                          resultNumber = 100.0 / secondNumber;
+                          break;
+                      case Operation.Multiplication:
+                          resultNumber = firstNumber * secondNumber * (firstNumber / 100.0);
+                          break;
+
+                      default:
+                          break;
+                  }
+                  break;
+
+              case "1/x":
+                  resultNumber = 1 / secondNumber;
+                  break;
+
+                 */
+
+
+
+
+
+
+
+
+
+
             return resultNumber.ToString();// выводит на экран,поэтому как только нажали вторую операцию(и тд) он сразу выводит трезультат 
 
 
         }
-
-
-     
-      public string Evaluateoper(string text)
-        {
-            secondNumber = double.Parse(text);
-           // currentState = State.WaitingForFirstNumber;
-
-            //
-            // рассмотреть 3 случая надо
-            switch (currentState)// now CS is waiting1number
-            {
-                case State.WaitingForOperation:// значит тут только одно число ,либо нечетное количество(то есть sqrt for firstnumber ввели только что)
-                    currentState = State.WaitingForResult;
-
-                    break;
-                case State.WaitingForSecondNumber:
-                    currentState = State.WaitingForResult;
-                    text = "";
-                    break;
-
-                case State.WaitingForResult:
-                    currentState = State.WaitingForResult;
-                    text = "";
-                    break;
-            }
-            return resultNumber.ToString();
-        }
-
-
-        /*  public string Evaluateoper(string text)
-          {
-              secondNumber = double.Parse(text);
-              currentState = State.WaitingForFirstNumber;
-
-              switch (operationres)
-              {
-                  case "sqrt":
-                      resultNumber = Math.Sqrt(secondNumber);
-                      break;
-
-                  case "%":
-
-                      switch (operation)
-                      {
-                          case Operation.None:
-                              break;
-                          case Operation.Plus:
-                              resultNumber = firstNumber + (secondNumber / 100.0) * firstNumber;
-                              break;
-                          case Operation.Minus:
-                              resultNumber = firstNumber - (secondNumber / 100.0) * firstNumber;
-                              break;
-                          case Operation.Divide:
-                              resultNumber = 100.0 / secondNumber;
-                              break;
-                          case Operation.Multiplication:
-                              resultNumber = firstNumber * secondNumber * (firstNumber / 100.0);
-                              break;
-
-                          default:
-                              break;
-                      }
-                      break;
-
-                  case "1/x":
-                      resultNumber = 1 / secondNumber;
-                      break;
-
-
-
-                      return resultNumber.ToString();
-
-              }
-          }
-          */
     }
 }
+    
+
+        

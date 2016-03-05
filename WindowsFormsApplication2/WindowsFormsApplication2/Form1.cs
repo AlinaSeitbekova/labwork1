@@ -97,26 +97,65 @@ namespace WindowsFormsApplication2
             Button operationresult = sender as Button;
             string operationres = operationresult.Text;
 
-            //       !!1СЛУЧАЙ  когда ввели одно число и хотим найти процент или корень
-            //
-            if (caclulator.currentState == State.WaitingForOperation)
-            {
-                caclulator.firstNumber = double.Parse(display.Text);
-                // switch dlya procenta i sqrt
-                caclulator.resultNumber = Math.Sqrt(caclulator.firstNumber);
-                display.Text = caclulator.resultNumber.ToString();
-                //
+
+           
+
+                if (caclulator.currentState == State.WaitingForOperation)//to est vveli odno chislo            {
+                {
+                    caclulator.firstNumber = double.Parse(display.Text);
+                    switch (operationres)
+                    {
+                        case "sqrt":
+                            caclulator.firstNumber = Math.Sqrt(caclulator.firstNumber);
+                            break;
+
+                        case "%":
+                            caclulator.firstNumber = 0.0;
+                            break;
+
+                        case "1/x":
+                            caclulator.firstNumber = 1.0 / caclulator.firstNumber;
+                            break;
+
+                        default:
+                            break;
+                    }
+
+
+                    display.Text = caclulator.firstNumber.ToString();
+                }
+              
+            // to est vveli dva chisla bez ravno
+                if (caclulator.currentState == State.WaitingForResult)
+                {   //считываем 2 число и вычисляем корень для него,используется для 2 и 3 случая(без равно и с )
+                    caclulator.secondNumber = double.Parse(display.Text);
+                    switch (operationres)
+                    {
+                        case "sqrt":
+                            caclulator.secondNumber = Math.Sqrt(caclulator.secondNumber);
+                            break;
+
+                        case "%":
+                            caclulator.secondNumber = (caclulator.firstNumber * caclulator.secondNumber) / 100.0;
+                            break;
+
+                        case "1/x":
+                            caclulator.secondNumber = 1.0 / caclulator.secondNumber;
+                            break;
+
+                        default:
+                            break;
+                    }
+
+
+                    display.Text = caclulator.secondNumber.ToString();
+                }
+                
             }
 
-            // display.Text = operationresult.Text;
-            //display.Text = caclulator.Evaluateoper(display.Text);
-           
             
-           //Button btn = sender as Button;
-          
-            //calculator.secondNumber = double.Parse(display.Text)
             
-        }
+        
 
 
         private void result_click(object sender, EventArgs e)
