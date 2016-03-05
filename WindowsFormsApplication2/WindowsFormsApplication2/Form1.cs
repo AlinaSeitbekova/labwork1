@@ -175,6 +175,31 @@ namespace WindowsFormsApplication2
 
         private void clear_click(object sender, EventArgs e)
         {
+            Button clear = sender as Button;
+            string operationclear = clear.Text;
+
+            switch (operationclear)
+            {
+                case "CE"://ydalit poslednee vvedennoe chislo
+                    {
+                        if (caclulator.currentState == State.WaitingForOperation)//to est vveli odno chislo   
+                            caclulator.firstNumber = 0;
+                        else if (caclulator.currentState == State.WaitingForResult)//to est vveli 2 chisla   
+                        {
+                            caclulator.secondNumber = 0;
+                            display.Text = "0";
+                        }
+                    }
+
+                    break;
+                case "C":// ydalit vse
+                   display.Text = "0";
+                    break;
+                
+                default:
+                    break;
+            }
+           
 
         }
 
@@ -185,6 +210,25 @@ namespace WindowsFormsApplication2
         private void memory_click(object sender, EventArgs e)
         {
 
+            Button operationMemoryButton = sender as Button;
+            string operationMemory = operationMemoryButton.Text;
+
+            switch (operationMemory)
+            {
+                case "MS"://zapis znacheniya v  bufer
+                    caclulator.memoryNumber = double.Parse(display.Text);
+                    break;
+                case "MC":// ochistka bufera
+                    caclulator.memoryNumber = 0;
+                    break;
+                case "MR":// vivod znacheniya iz bufera na display
+                    display.Text = caclulator.memoryNumber.ToString();
+                    break;
+                case "M+":// pribavit znachenie k znacheniu iz bufera
+                    caclulator.memoryNumber = caclulator.memoryNumber + double.Parse(display.Text);
+                    break;
+            }
+            memory.Text = caclulator.memoryNumber.ToString();
         }
         private void Form1_Load(object sender, EventArgs e)
         {

@@ -14,6 +14,9 @@ namespace Example3.Models
         public static Snake snake;
         public static Food food;
         public static Wall wall;
+        public static string dir; // начальный путь змейки направлено на право;
+        public static int tailsx;
+        public static int tailsy;
 
         public static void Init()
         {
@@ -22,8 +25,8 @@ namespace Example3.Models
             food = new Food();
             wall = new Wall();
 
-            snake.body.Add(new Point { x = 20, y = 20 });// добавляет объект(положение змеи) к массиву точек змеи
-            food.body.Add(new Point { x = 10, y = 20 });
+            snake.body.Add(new Point { x = 19, y = 21 });// добавляет объект(положение змеи) к массиву точек змеи
+            food.body.Add(new Point { x = 9, y = 21 });
 
             food.color = ConsoleColor.Green;
             wall.color = ConsoleColor.White;
@@ -34,6 +37,7 @@ namespace Example3.Models
   
         public static void LoadlLevel(int level)
         {
+           
             FileStream fs = new FileStream(string.Format(@"Levels\MapLevel{0}.txt", level), FileMode.Open, FileAccess.Read);
             StreamReader sr = new StreamReader(fs);// считывает данные с потока fs и записывает их в sr
 
@@ -54,7 +58,8 @@ namespace Example3.Models
                     }
                 }
             }
-
+            wall.Draw();
+                
             sr.Close();
             fs.Close();
         }
@@ -87,13 +92,22 @@ namespace Example3.Models
             snake.Resume2();
             food.Resume2();
         }
-
+        public static void DrawSnake()
+        {
+           
+            snake.Draw();
+            //!!!!!!
+            Snake.ClearTail(tailsx, tailsy);// за счет этого не мерцает
+            food.Draw();
+        }
         public static void Draw()
         {
             Console.Clear();
-            snake.Draw();
+           /* snake.Draw();
             food.Draw();
+            
             wall.Draw();
+            */
             Console.SetCursorPosition(0, 46);
    
             Console.WriteLine("Уровень: {0} ",Program.Level);

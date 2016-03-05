@@ -33,6 +33,7 @@ namespace WindowsFormsApplication2.Model
         public State currentState = State.WaitingForFirstNumber;
         public Operation operation = Operation.None;
         public string operationres;
+        public double memoryNumber = 0;
 
         public string Evaluate(string text)//secondnumbers text(+в случае когда прибавляем() третье число к первому и второму сразу без равно
         {

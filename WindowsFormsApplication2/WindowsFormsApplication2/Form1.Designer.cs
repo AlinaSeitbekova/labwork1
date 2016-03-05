@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.ce = new System.Windows.Forms.Button();
-            this.c = new System.Windows.Forms.Button();
+            this.memory = new System.Windows.Forms.Button();
+            this.back = new System.Windows.Forms.Button();
+            this.CE = new System.Windows.Forms.Button();
+            this.C = new System.Windows.Forms.Button();
             this.operation_division = new System.Windows.Forms.Button();
             this.operation_sqrt = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
@@ -61,57 +60,57 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
-            // button8
+            // memory
             // 
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button8.Location = new System.Drawing.Point(364, 104);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(50, 30);
-            this.button8.TabIndex = 20;
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.memory_click);
+            this.memory.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.memory.Location = new System.Drawing.Point(364, 104);
+            this.memory.Name = "memory";
+            this.memory.Size = new System.Drawing.Size(50, 30);
+            this.memory.TabIndex = 20;
+            this.memory.UseVisualStyleBackColor = true;
+            this.memory.Click += new System.EventHandler(this.memory_click);
             // 
-            // button9
+            // back
             // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button9.ForeColor = System.Drawing.Color.Red;
-            this.button9.Location = new System.Drawing.Point(155, 104);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(50, 30);
-            this.button9.TabIndex = 21;
-            this.button9.Text = "Back";
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.clear_click);
+            this.back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.back.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.back.ForeColor = System.Drawing.Color.Red;
+            this.back.Location = new System.Drawing.Point(155, 104);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(50, 30);
+            this.back.TabIndex = 21;
+            this.back.Text = "Back";
+            this.back.UseVisualStyleBackColor = false;
+            this.back.Click += new System.EventHandler(this.clear_click);
             // 
-            // ce
+            // CE
             // 
-            this.ce.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.ce.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ce.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ce.ForeColor = System.Drawing.Color.Red;
-            this.ce.Location = new System.Drawing.Point(82, 104);
-            this.ce.Name = "ce";
-            this.ce.Size = new System.Drawing.Size(50, 30);
-            this.ce.TabIndex = 22;
-            this.ce.Text = "CE";
-            this.ce.UseVisualStyleBackColor = false;
-            this.ce.Click += new System.EventHandler(this.clear_click);
+            this.CE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.CE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.CE.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CE.ForeColor = System.Drawing.Color.Red;
+            this.CE.Location = new System.Drawing.Point(82, 104);
+            this.CE.Name = "CE";
+            this.CE.Size = new System.Drawing.Size(50, 30);
+            this.CE.TabIndex = 22;
+            this.CE.Text = "CE";
+            this.CE.UseVisualStyleBackColor = false;
+            this.CE.Click += new System.EventHandler(this.clear_click);
             // 
-            // c
+            // C
             // 
-            this.c.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.c.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.c.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.c.ForeColor = System.Drawing.Color.Red;
-            this.c.Location = new System.Drawing.Point(14, 104);
-            this.c.Name = "c";
-            this.c.Size = new System.Drawing.Size(50, 30);
-            this.c.TabIndex = 23;
-            this.c.Text = "C";
-            this.c.UseVisualStyleBackColor = false;
-            this.c.Click += new System.EventHandler(this.clear_click);
+            this.C.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.C.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.C.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.C.ForeColor = System.Drawing.Color.Red;
+            this.C.Location = new System.Drawing.Point(14, 104);
+            this.C.Name = "C";
+            this.C.Size = new System.Drawing.Size(50, 30);
+            this.C.TabIndex = 23;
+            this.C.Text = "C";
+            this.C.UseVisualStyleBackColor = false;
+            this.C.Click += new System.EventHandler(this.clear_click);
             // 
             // operation_division
             // 
@@ -502,10 +501,10 @@
             this.Controls.Add(this.tab9);
             this.Controls.Add(this.tab7);
             this.Controls.Add(this.button18);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.ce);
-            this.Controls.Add(this.c);
+            this.Controls.Add(this.memory);
+            this.Controls.Add(this.back);
+            this.Controls.Add(this.CE);
+            this.Controls.Add(this.C);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ForeColor = System.Drawing.Color.Red;
             this.Location = new System.Drawing.Point(10, 20);
@@ -522,10 +521,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button ce;
-        private System.Windows.Forms.Button c;
+        private System.Windows.Forms.Button memory;
+        private System.Windows.Forms.Button back;
+        private System.Windows.Forms.Button CE;
+        private System.Windows.Forms.Button C;
         private System.Windows.Forms.Button operation_division;
         private System.Windows.Forms.Button operation_sqrt;
         private System.Windows.Forms.Button tab8;
