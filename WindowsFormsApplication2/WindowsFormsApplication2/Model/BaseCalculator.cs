@@ -98,47 +98,7 @@ namespace WindowsFormsApplication2.Model
              }
                 
                
-            
-
-            /*  case "%":
-
-                  switch (operation)
-                  {
-                      case Operation.None:
-                          break;
-                      case Operation.Plus:
-                          resultNumber = firstNumber + (secondNumber / 100.0) * firstNumber;
-                          break;
-                      case Operation.Minus:
-                          resultNumber = firstNumber - (secondNumber / 100.0) * firstNumber;
-                          break;
-                      case Operation.Divide:
-                          resultNumber = 100.0 / secondNumber;
-                          break;
-                      case Operation.Multiplication:
-                          resultNumber = firstNumber * secondNumber * (firstNumber / 100.0);
-                          break;
-
-                      default:
-                          break;
-                  }
-                  break;
-
-              case "1/x":
-                  resultNumber = 1 / secondNumber;
-                  break;
-
-                 */
-
-
-
-
-
-
-
-
-
-
+         
             return resultNumber.ToString();// выводит на экран,поэтому как только нажали вторую операцию(и тд) он сразу выводит трезультат 
 
 

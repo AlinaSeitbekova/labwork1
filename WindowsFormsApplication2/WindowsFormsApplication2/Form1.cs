@@ -42,9 +42,9 @@ namespace WindowsFormsApplication2
                     //break;
                
             }
-            if (btn.Text == ".")
+            if (btn.Text == ",")
             {
-                if (!display.Text.Contains("."))
+                if (!display.Text.Contains(","))
                     display.Text += btn.Text;// если уже содержит эту точку то ничего
             }
             else
@@ -116,6 +116,9 @@ namespace WindowsFormsApplication2
                         case "1/x":
                             caclulator.firstNumber = 1.0 / caclulator.firstNumber;
                             break;
+                        case "+/-":
+                            caclulator.firstNumber = -caclulator.firstNumber;
+                            break;
 
                         default:
                             break;
@@ -142,6 +145,10 @@ namespace WindowsFormsApplication2
                         case "1/x":
                             caclulator.secondNumber = 1.0 / caclulator.secondNumber;
                             break;
+                        case "+/-":
+                            caclulator.secondNumber = -caclulator.secondNumber;
+                            break;
+
 
                         default:
                             break;

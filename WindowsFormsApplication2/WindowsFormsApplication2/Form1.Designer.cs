@@ -58,6 +58,7 @@
             this.tab7 = new System.Windows.Forms.Button();
             this.display = new System.Windows.Forms.TextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.change = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // memory
@@ -293,7 +294,7 @@
             this.tab11.Name = "tab11";
             this.tab11.Size = new System.Drawing.Size(50, 30);
             this.tab11.TabIndex = 29;
-            this.tab11.Text = ".";
+            this.tab11.Text = ",";
             this.tab11.UseVisualStyleBackColor = false;
             this.tab11.Click += new System.EventHandler(this.tab_click);
             // 
@@ -468,6 +469,16 @@
             this.linkLabel1.Text = "Edit                    View                                       Help";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // change
+            // 
+            this.change.Location = new System.Drawing.Point(229, 108);
+            this.change.Name = "change";
+            this.change.Size = new System.Drawing.Size(50, 23);
+            this.change.TabIndex = 30;
+            this.change.Text = "+/-";
+            this.change.UseVisualStyleBackColor = true;
+            this.change.Click += new System.EventHandler(this.resultoper_click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -475,6 +486,7 @@
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(469, 331);
+            this.Controls.Add(this.change);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.display);
             this.Controls.Add(this.operation_plus);
@@ -551,6 +563,7 @@
         private System.Windows.Forms.Button button36;
         private System.Windows.Forms.TextBox display;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button change;
     }
 }
 
