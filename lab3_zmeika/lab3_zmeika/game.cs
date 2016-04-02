@@ -102,7 +102,7 @@ namespace Example3.Models
         }
         public static void Draw()
         {
-            Console.Clear();
+            //Console.Clear();
            /* snake.Draw();
             food.Draw();
             
@@ -113,6 +113,9 @@ namespace Example3.Models
             Console.WriteLine("Уровень: {0} ",Program.Level);
             Console.SetCursorPosition(0, 47);
             Console.WriteLine("Cчет: {0} ",Game.snake.body.Count-1);//эта функция считывает размер змейки,соответсвенно если отнять 1 -количество съеденной еды это счет,после перехода на новый уровень он обнуляется
+            Console.SetCursorPosition(0, 48);
+
+            Console.WriteLine("время:  "+ Program.minute + Program.second);
         }
     }
 }

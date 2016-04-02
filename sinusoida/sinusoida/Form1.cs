@@ -52,6 +52,7 @@ namespace sinusoida
             e.Graphics.DrawCurve(pen, arr.ToArray());
             e.Graphics.DrawLine(new Pen(Color.Black), p1, p2);
             e.Graphics.DrawLine(new Pen(Color.Black), p3, p4);
+            
         }
 
        
