@@ -37,7 +37,7 @@ namespace _4taskgr
             arr4.Add(new PointF((float)536, (float)260));
 
             t.Tick += T_Tick;
-            t.Interval = 5000;
+            t.Interval = 10000;
             t.Start();
         }
         int x = 0, x2 = 0, x4 = 0, y4, y2;
