@@ -42,7 +42,7 @@ namespace prostchisla
 
                 }
 
-                if (cnt != 0)
+                if (cnt == 0)
                 {
                     if (numpr < min)
                         min = numpr;

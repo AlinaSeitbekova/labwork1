@@ -1,4 +1,4 @@
-﻿namespace kartinka
+﻿namespace _4taskgr
 {
     partial class Form1
     {

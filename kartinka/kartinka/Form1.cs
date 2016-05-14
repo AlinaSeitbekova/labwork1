@@ -20,6 +20,7 @@ namespace kartinka
         public void Form1_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.Clear(Color.Blue);// zapolnyaem vse golybim cvetom
+        
             e.Graphics.FillPolygon(new SolidBrush(Color.DarkOrange), Spaceship(350, 220)); // верхняя точка ракеты с кораблем
             e.Graphics.FillPolygon(new SolidBrush(Color.DarkGreen), Arrow(350, 220)); // верхняя точка корабля с ракетой
             for (int i = 0; i < 4; i++)
@@ -40,10 +41,13 @@ namespace kartinka
                 stringFormat.Alignment = StringAlignment.Center;
                 stringFormat.LineAlignment = StringAlignment.Center;
                 RectangleF rectF1 = new RectangleF(400, 30, 220, 40);// верхний угол и ширина высота
-                e.Graphics.FillRectangle(Brushes.White, Rectangle.Round(rectF1));
+               e.Graphics.FillRectangle(Brushes.White, Rectangle.Round(rectF1));
                 e.Graphics.DrawRectangle(pen, Rectangle.Round(rectF1));
+               // e.Graphics.FillRectangle(Brushes.Black,  rectF1);
+
                 e.Graphics.DrawString("Level: 1 Score: 200 Live: ***** ", font1, Brushes.Black, rectF1, stringFormat);
             }
+
         }
 
         private PointF[] Arrow(int x, int y)//стрелочка
@@ -164,6 +168,11 @@ namespace kartinka
            
             RectangleF r = new RectangleF(x, y, 20, 20);
             return r;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

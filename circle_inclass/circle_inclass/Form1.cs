@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
+using System.Drawing;//
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -24,7 +24,7 @@ namespace circle_inclass
 
         private void T_Tick(object sender, EventArgs e)
         {
-            //   this.Text = DateTime.Now.ToString("HH:mm:ss:fff");
+              this.Text = DateTime.Now.ToString("HH:mm:ss:fff");
             p1.X += 10;
             p1.Y += 3;
             this.Refresh();
@@ -32,8 +32,8 @@ namespace circle_inclass
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-           // e.Graphics.DrawLine(new Pen(Color.Red), p1, p2);
-          //  e.Graphics.FillRectangle(new SolidBrush(Color.Green), 20, 20, 40, 40);
+            e.Graphics.DrawLine(new Pen(Color.Red), p1, p2);
+            e.Graphics.FillRectangle(new SolidBrush(Color.Green), 20, 20, 40, 40);
             e.Graphics.FillEllipse(Brushes.Red, p1.X, p1.Y, 40, 40);
 
         }

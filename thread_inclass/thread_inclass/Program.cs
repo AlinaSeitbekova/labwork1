@@ -12,11 +12,12 @@ namespace ThreadSample1
         static void Main(string[] args)
         {
             //Console.WriteLine("hello!");
-            F3();
+            F1();
         }
         private static void F3()
         {
             Thread t = new Thread(new ParameterizedThreadStart(doit3));
+            
             t.Start("1");
 
             t.IsBackground = true;
@@ -51,7 +52,7 @@ namespace ThreadSample1
         private static void F2()
         {
             Thread t = new Thread(new ParameterizedThreadStart(doit2));
-            t.Start("1");
+            t.Start("1");//message
 
             Thread t2 = new Thread(new ParameterizedThreadStart(doit2));
             t2.Start("2");
@@ -64,7 +65,7 @@ namespace ThreadSample1
             while (true)
             {
                 Console.WriteLine(message + " " + Thread.CurrentThread.ManagedThreadId);
-                // Thread.Sleep(1000);
+                 Thread.Sleep(1000);
 
             }
         }
@@ -73,11 +74,11 @@ namespace ThreadSample1
         {
             Timer t = new Timer(new TimerCallback(doit));
 
-            t.Change(0, 1000);
+            t.Change(10000, 1000);
 
             bool ok = false;
 
-            while (!ok)
+            while (!ok)//
             {
                 string line = Console.ReadLine();
                 ok = true;

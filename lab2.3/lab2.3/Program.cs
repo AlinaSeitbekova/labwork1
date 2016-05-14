@@ -52,13 +52,26 @@ namespace lab2_3
                         min = currentNumber;
                 }
             }
+             
             //результат выводится в output.txt
             Console.WriteLine("Minimum prime number is " + min);
-            //файлы закрываются
-            sr.Close();
            
-            fr.Close();
+            
+             sr.Close();
+             fr.Close();
+         
+       
+            StreamWriter file = new StreamWriter("output.txt");
+            file.WriteLine( min);
+            
+           file.Close();
+            
+            
+      
+            //файлы закрываются
+           
        
         }
+
     }
 }
